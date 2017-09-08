@@ -2,9 +2,13 @@
 #include <linux/kernel.h>
 #include <linux/fs.h>
 #include <linux/cdev.h>
+#include <linux/ioctl.h>
 
 #define		HELLO_MAJOR 	231
 #define 	DEVICE_NAME		"HelloModule"
+
+#define 	COMMAND1 		1
+#define 	COMMAND2 		2
 
 static struct cdev hello_cdev;
 static dev_t dev;
@@ -26,11 +30,26 @@ static int hello_release(struct inode *inode,struct flie *flip)
 	printk(KERN_EMERG "I execute release here!\n");
 }
 
+static int hello_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
+{
+	if (cmd == COMMAND1) {
+        printk(KERN_EMERG "ioctl command 1 successfully\n");
+        return 0;
+    }
+    if (cmd == COMMAND2) {
+        printk(KERN_EMERG "ioctl command 2 successfully\n");
+        return 0;
+    }
+    printk(KERN_EMERG "ioctl error,unknow ioctl cmd!\n");
+    return -EFAULT;
+}
+
 static struct file_operations hello_flops = {
-	.owner = THIS_MODULE,
+	.owner = THIS_MODULE,/* 这是一个宏，推向编译模块时自动创建的__this_module变量 */
 	.open  = hello_open,
 	.write = hello_write,
-	.open  = hello_release,
+	.release  = hello_release,
+	.unlocked_ioctl = hello_ioctl,
 };
 
 static int __init hello_init(void)
@@ -65,7 +84,7 @@ static void __exit hello_exit(void)
 {
 	/*remove cdev*/
 	cdev_del(&hello_cdev);
-	unregister_chrdev(HELLO_MAJOR,DEVICE_NAME);
+	unregister_chrdev_region(dev,1);
 	printk(KERN_EMERG DEVICE_NAME " removed.\n");
 }
 
