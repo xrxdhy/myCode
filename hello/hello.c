@@ -32,16 +32,18 @@ static int hello_release(struct inode *inode,struct flie *flip)
 
 static int hello_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
 {
-	if (cmd == COMMAND1) {
-        printk(KERN_EMERG "ioctl command 1 successfully\n");
-        return 0;
-    }
-    if (cmd == COMMAND2) {
-        printk(KERN_EMERG "ioctl command 2 successfully\n");
-        return 0;
-    }
-    printk(KERN_EMERG "ioctl error,unknow ioctl cmd!\n");
-    return -EFAULT;
+	switch(cmd){
+	case COMMAND1:
+		printk(KERN_EMERG "ioctl command 1 successfully\n");
+		break;
+	case COMMAND2:
+		printk(KERN_EMERG "ioctl command 2 successfully\n");
+		break;
+	default:
+		printk(KERN_EMERG "ioctl error,unknow ioctl cmd!\n");
+		return -EFAULT;
+	}
+	return 0;
 }
 
 static struct file_operations hello_flops = {
