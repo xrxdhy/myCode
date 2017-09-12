@@ -91,7 +91,6 @@
 `offp`是一个指向“long offset type”对象，它指出用户正在存取的文件位置。  
 `count`是请求的传输数据大小。
 
-
 	get_user(x,ptr)
 `x`是存储结果的变量  
 `ptr`用户空间的原地址  
