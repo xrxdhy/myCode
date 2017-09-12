@@ -84,6 +84,14 @@
     void cdev_del(struct cdev *dev);
 
 ### 内核空间和用户空间的数据交换
+	ssize_t read(struct file *filp, char __user *buff, size_t count, loff_t *offp);  
+	ssize_t write(struct file *filp, const char __user *buff, size_t count, loff_t *offp);
+`filp`是文件指针。  
+`buff`参数是用户空间指针，因此不能被内核代码直接引用，所以要使用下面几个方法。  
+`offp`是一个指向“long offset type”对象，它指出用户正在存取的文件位置。  
+`count`是请求的传输数据大小。
+
+
 	get_user(x,ptr)
 `x`是存储结果的变量  
 `ptr`用户空间的原地址  
@@ -93,6 +101,13 @@
     
     /*向用户空间写入值*/
     put_user(x,ptr)
-`x`是要拷贝到用户空间的值
+`x`是要拷贝到用户空间的值  
 `ptr`用户空间的目标地址
 
+	#include <asm/uaccess.h>
+    unsigned long copy_from_user(void *to,const void __user *from,unsigned long count);
+    unsigned long copy_to_user(void __user *to,const void *from, unsigned long count);
+`__user`是一个宏，表明其后的指针指向用户空间。
+`返回值`函数返回不能被复制的字节数，完全复制成功返回0.
+
+	
