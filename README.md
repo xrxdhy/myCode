@@ -86,10 +86,15 @@
 ### 内核空间和用户空间的数据交换
 	ssize_t read(struct file *filp, char __user *buff, size_t count, loff_t *offp);  
 	ssize_t write(struct file *filp, const char __user *buff, size_t count, loff_t *offp);
+<<<<<<< HEAD
 `filp`是文件指针。  
 `buff`参数是用户空间指针，因此不能被内核代码直接引用，所以要使用下面几个方法。  
 `offp`是一个指向“long offset type”对象，它指出用户正在存取的文件位置。  
 `count`是请求的传输数据大小。
+=======
+这两个函数的buff参数是用户空间指针，因此不能被内核代码直接引用，所以要使用下面几个方法。
+offp是一个指向“long offset type”对象，它指出用户正在存取的文件位置。
+>>>>>>> dbbdc8379b6d51a02575444496e09f8dccdb4481
 
 	get_user(x,ptr)
 `x`是存储结果的变量  
