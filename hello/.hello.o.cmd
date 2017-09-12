@@ -651,6 +651,53 @@ deps_/home/yhd/workspace/myCode/hello/hello.o := \
   arch/x86/include/uapi/asm/fcntl.h \
   include/uapi/asm-generic/fcntl.h \
   include/linux/cdev.h \
+  arch/x86/include/asm/uaccess.h \
+    $(wildcard include/config/x86/intel/usercopy.h) \
+    $(wildcard include/config/debug/strict/user/copy/checks.h) \
+  arch/x86/include/asm/smap.h \
+    $(wildcard include/config/x86/smap.h) \
+  arch/x86/include/asm/uaccess_64.h \
+  include/linux/mm.h \
+    $(wildcard include/config/ppc.h) \
+    $(wildcard include/config/parisc.h) \
+    $(wildcard include/config/metag.h) \
+    $(wildcard include/config/stack/growsup.h) \
+    $(wildcard include/config/shmem.h) \
+    $(wildcard include/config/debug/vm/rb.h) \
+    $(wildcard include/config/debug/pagealloc.h) \
+    $(wildcard include/config/hugetlbfs.h) \
+  include/linux/debug_locks.h \
+    $(wildcard include/config/debug/locking/api/selftests.h) \
+  include/linux/resource.h \
+  include/uapi/linux/resource.h \
+  arch/x86/include/uapi/asm/resource.h \
+  include/asm-generic/resource.h \
+  include/uapi/asm-generic/resource.h \
+  include/linux/page_ext.h \
+    $(wildcard include/config/idle/page/tracking.h) \
+    $(wildcard include/config/page/owner.h) \
+  include/linux/stacktrace.h \
+    $(wildcard include/config/stacktrace.h) \
+    $(wildcard include/config/user/stacktrace/support.h) \
+  arch/x86/include/asm/pgtable.h \
+    $(wildcard include/config/debug/wx.h) \
+    $(wildcard include/config/have/arch/soft/dirty.h) \
+  arch/x86/include/asm/pgtable_64.h \
+  include/asm-generic/pgtable.h \
+    $(wildcard include/config/have/arch/huge/vmap.h) \
+  include/linux/page-flags.h \
+    $(wildcard include/config/arch/uses/pg/uncached.h) \
+    $(wildcard include/config/memory/failure.h) \
+    $(wildcard include/config/swap.h) \
+    $(wildcard include/config/ksm.h) \
+  include/linux/huge_mm.h \
+  include/linux/vmstat.h \
+    $(wildcard include/config/vm/event/counters.h) \
+    $(wildcard include/config/debug/tlbflush.h) \
+    $(wildcard include/config/debug/vm/vmacache.h) \
+  include/linux/vm_event_item.h \
+    $(wildcard include/config/memory/balloon.h) \
+    $(wildcard include/config/balloon/compaction.h) \
 
 /home/yhd/workspace/myCode/hello/hello.o: $(deps_/home/yhd/workspace/myCode/hello/hello.o)
 

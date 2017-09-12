@@ -10,22 +10,27 @@ int main(void)
 {
     int fd;
     int ret;
-    int val = 1;
-    char data = {0};
-    fd = open("/dev/helloDevice_234", O_RDWR);
+    char data[20] = "Are you ok, yhd?";
+    fd = open("/dev/helloDevice_245", O_RDWR);
     if(fd < 0){
-        printf("can't open!\n");
+        perror("can't open!");
     }
-    if((ret = write(fd, &val, 4)) < 0)
+    if((ret = write(fd, &data, sizeof(data))) < 0)
     {
-    	printf("write error\n");
+    	perror("write error");
     	exit(ret);
     }
     if((ret = ioctl(fd,COMMAND1,0)) < 0)
     {
-    	printf("ioctl error!\n");
+    	perror("ioctl error!");
     	exit(ret);
     }
+    if((ret = read(fd,data,2)) < 0)
+    {
+        perror("read error!");
+        exit(ret);
+    }
+    printf("There is userspace : data = %s\n",data);
     close(fd);
     return 0;
 }
