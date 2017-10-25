@@ -549,6 +549,7 @@ deps_/home/yhd/workspace/myCode/hello/hellomodule.mod.o := \
     $(wildcard include/config/userfaultfd.h) \
     $(wildcard include/config/aio.h) \
     $(wildcard include/config/mmu/notifier.h) \
+    $(wildcard include/config/arch/want/batched/unmap/tlb/flush.h) \
   include/linux/auxvec.h \
   include/uapi/linux/auxvec.h \
   include/linux/uprobes.h \

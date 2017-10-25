@@ -1,0 +1,1 @@
+cmd_/home/yhd/workspace/myCode/v4l2Demo/v4l2demo.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/yhd/workspace/myCode/v4l2Demo/v4l2demo.ko /home/yhd/workspace/myCode/v4l2Demo/v4l2demo.o /home/yhd/workspace/myCode/v4l2Demo/v4l2demo.mod.o

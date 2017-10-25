@@ -1,27 +1,16 @@
-cmd_/home/yhd/workspace/myCode/hello/hello.o := gcc -Wp,-MD,/home/yhd/workspace/myCode/hello/.hello.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/4.8/include  -I./arch/x86/include -Iarch/x86/include/generated/uapi -Iarch/x86/include/generated  -Iinclude -I./arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I./include/uapi -Iinclude/generated/uapi -include ./include/linux/kconfig.h -Iubuntu/include  -D__KERNEL__ -fno-pie -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-PIE -fno-pie -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mtune=generic -mno-red-zone -mcmodel=kernel -funit-at-a-time -maccumulate-outgoing-args -DCONFIG_X86_X32_ABI -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_FXSAVEQ=1 -DCONFIG_AS_SSSE3=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -DCONFIG_AS_SHA1_NI=1 -DCONFIG_AS_SHA256_NI=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -fno-delete-null-pointer-checks -Wno-maybe-uninitialized -O2 --param=allow-store-data-races=0 -DCC_HAVE_ASM_GOTO -Wframe-larger-than=1024 -fstack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -mfentry -DCC_USING_FENTRY -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(hello)"  -D"KBUILD_MODNAME=KBUILD_STR(hellomodule)" -c -o /home/yhd/workspace/myCode/hello/.tmp_hello.o /home/yhd/workspace/myCode/hello/hello.c
+cmd_/home/yhd/workspace/myCode/v4l2Demo/v4l2demo.o := gcc -Wp,-MD,/home/yhd/workspace/myCode/v4l2Demo/.v4l2demo.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/4.8/include  -I./arch/x86/include -Iarch/x86/include/generated/uapi -Iarch/x86/include/generated  -Iinclude -I./arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I./include/uapi -Iinclude/generated/uapi -include ./include/linux/kconfig.h -Iubuntu/include  -D__KERNEL__ -fno-pie -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-PIE -fno-pie -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mtune=generic -mno-red-zone -mcmodel=kernel -funit-at-a-time -maccumulate-outgoing-args -DCONFIG_X86_X32_ABI -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_FXSAVEQ=1 -DCONFIG_AS_SSSE3=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -DCONFIG_AS_SHA1_NI=1 -DCONFIG_AS_SHA256_NI=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -fno-delete-null-pointer-checks -Wno-maybe-uninitialized -O2 --param=allow-store-data-races=0 -DCC_HAVE_ASM_GOTO -Wframe-larger-than=1024 -fstack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -mfentry -DCC_USING_FENTRY -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(v4l2demo)"  -D"KBUILD_MODNAME=KBUILD_STR(v4l2demo)" -c -o /home/yhd/workspace/myCode/v4l2Demo/.tmp_v4l2demo.o /home/yhd/workspace/myCode/v4l2Demo/v4l2demo.c
 
-source_/home/yhd/workspace/myCode/hello/hello.o := /home/yhd/workspace/myCode/hello/hello.c
+source_/home/yhd/workspace/myCode/v4l2Demo/v4l2demo.o := /home/yhd/workspace/myCode/v4l2Demo/v4l2demo.c
 
-deps_/home/yhd/workspace/myCode/hello/hello.o := \
-  include/linux/module.h \
-    $(wildcard include/config/modules.h) \
-    $(wildcard include/config/sysfs.h) \
-    $(wildcard include/config/module/sig.h) \
-    $(wildcard include/config/modules/tree/lookup.h) \
-    $(wildcard include/config/unused/symbols.h) \
-    $(wildcard include/config/generic/bug.h) \
-    $(wildcard include/config/kallsyms.h) \
+deps_/home/yhd/workspace/myCode/v4l2Demo/v4l2demo.o := \
+  include/linux/videodev2.h \
+  include/linux/time.h \
+    $(wildcard include/config/arch/uses/gettimeoffset.h) \
+  include/linux/cache.h \
     $(wildcard include/config/smp.h) \
-    $(wildcard include/config/tracepoints.h) \
-    $(wildcard include/config/tracing.h) \
-    $(wildcard include/config/event/tracing.h) \
-    $(wildcard include/config/ftrace/mcount/record.h) \
-    $(wildcard include/config/livepatch.h) \
-    $(wildcard include/config/module/unload.h) \
-    $(wildcard include/config/constructors.h) \
-    $(wildcard include/config/debug/set/module/ronx.h) \
-  include/linux/list.h \
-    $(wildcard include/config/debug/list.h) \
+    $(wildcard include/config/arch/has/cache/line/size.h) \
+  include/uapi/linux/kernel.h \
+  include/uapi/linux/sysinfo.h \
   include/linux/types.h \
     $(wildcard include/config/have/uid16.h) \
     $(wildcard include/config/uid16.h) \
@@ -57,6 +46,34 @@ deps_/home/yhd/workspace/myCode/hello/hello.o := \
     $(wildcard include/config/x86/32.h) \
   arch/x86/include/uapi/asm/posix_types_64.h \
   include/uapi/asm-generic/posix_types.h \
+  arch/x86/include/asm/cache.h \
+    $(wildcard include/config/x86/l1/cache/shift.h) \
+    $(wildcard include/config/x86/internode/cache/shift.h) \
+    $(wildcard include/config/x86/vsmp.h) \
+  include/linux/linkage.h \
+  include/linux/stringify.h \
+  include/linux/export.h \
+    $(wildcard include/config/have/underscore/symbol/prefix.h) \
+    $(wildcard include/config/modules.h) \
+    $(wildcard include/config/modversions.h) \
+    $(wildcard include/config/unused/symbols.h) \
+  arch/x86/include/asm/linkage.h \
+    $(wildcard include/config/x86/64.h) \
+    $(wildcard include/config/x86/alignment/16.h) \
+  include/linux/seqlock.h \
+    $(wildcard include/config/debug/lock/alloc.h) \
+  include/linux/spinlock.h \
+    $(wildcard include/config/debug/spinlock.h) \
+    $(wildcard include/config/generic/lockbreak.h) \
+    $(wildcard include/config/preempt.h) \
+  include/linux/typecheck.h \
+  include/linux/preempt.h \
+    $(wildcard include/config/preempt/count.h) \
+    $(wildcard include/config/debug/preempt.h) \
+    $(wildcard include/config/preempt/tracer.h) \
+    $(wildcard include/config/preempt/notifiers.h) \
+  include/linux/list.h \
+    $(wildcard include/config/debug/list.h) \
   include/linux/poison.h \
     $(wildcard include/config/illegal/pointer/value.h) \
   include/uapi/linux/const.h \
@@ -66,15 +83,9 @@ deps_/home/yhd/workspace/myCode/hello/hello.o := \
     $(wildcard include/config/mmu.h) \
     $(wildcard include/config/prove/locking.h) \
     $(wildcard include/config/panic/timeout.h) \
+    $(wildcard include/config/tracing.h) \
+    $(wildcard include/config/ftrace/mcount/record.h) \
   /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
-  include/linux/linkage.h \
-  include/linux/stringify.h \
-  include/linux/export.h \
-    $(wildcard include/config/have/underscore/symbol/prefix.h) \
-    $(wildcard include/config/modversions.h) \
-  arch/x86/include/asm/linkage.h \
-    $(wildcard include/config/x86/64.h) \
-    $(wildcard include/config/x86/alignment/16.h) \
   include/linux/bitops.h \
   arch/x86/include/asm/bitops.h \
     $(wildcard include/config/x86/cmov.h) \
@@ -86,10 +97,6 @@ deps_/home/yhd/workspace/myCode/hello/hello.o := \
   arch/x86/include/asm/segment.h \
     $(wildcard include/config/cc/stackprotector.h) \
     $(wildcard include/config/x86/32/lazy/gs.h) \
-  arch/x86/include/asm/cache.h \
-    $(wildcard include/config/x86/l1/cache/shift.h) \
-    $(wildcard include/config/x86/internode/cache/shift.h) \
-    $(wildcard include/config/x86/vsmp.h) \
   arch/x86/include/asm/page_types.h \
     $(wildcard include/config/physical/start.h) \
     $(wildcard include/config/physical/align.h) \
@@ -157,7 +164,6 @@ deps_/home/yhd/workspace/myCode/hello/hello.o := \
   include/linux/log2.h \
     $(wildcard include/config/arch/has/ilog2/u32.h) \
     $(wildcard include/config/arch/has/ilog2/u64.h) \
-  include/linux/typecheck.h \
   include/linux/printk.h \
     $(wildcard include/config/message/loglevel/default.h) \
     $(wildcard include/config/early/printk.h) \
@@ -167,27 +173,7 @@ deps_/home/yhd/workspace/myCode/hello/hello.o := \
     $(wildcard include/config/broken/rodata.h) \
     $(wildcard include/config/lto.h) \
   include/linux/kern_levels.h \
-  include/linux/cache.h \
-    $(wildcard include/config/arch/has/cache/line/size.h) \
-  include/uapi/linux/kernel.h \
-  include/uapi/linux/sysinfo.h \
   include/linux/dynamic_debug.h \
-  include/linux/stat.h \
-  arch/x86/include/uapi/asm/stat.h \
-  include/uapi/linux/stat.h \
-  include/linux/time.h \
-    $(wildcard include/config/arch/uses/gettimeoffset.h) \
-  include/linux/seqlock.h \
-    $(wildcard include/config/debug/lock/alloc.h) \
-  include/linux/spinlock.h \
-    $(wildcard include/config/debug/spinlock.h) \
-    $(wildcard include/config/generic/lockbreak.h) \
-    $(wildcard include/config/preempt.h) \
-  include/linux/preempt.h \
-    $(wildcard include/config/preempt/count.h) \
-    $(wildcard include/config/debug/preempt.h) \
-    $(wildcard include/config/preempt/tracer.h) \
-    $(wildcard include/config/preempt/notifiers.h) \
   arch/x86/include/asm/preempt.h \
   arch/x86/include/asm/percpu.h \
     $(wildcard include/config/x86/64/smp.h) \
@@ -201,6 +187,7 @@ deps_/home/yhd/workspace/myCode/hello/hello.o := \
     $(wildcard include/config/compat.h) \
     $(wildcard include/config/debug/stack/usage.h) \
   include/linux/bug.h \
+    $(wildcard include/config/generic/bug.h) \
   arch/x86/include/asm/bug.h \
     $(wildcard include/config/debug/bugverbose.h) \
   include/asm-generic/bug.h \
@@ -323,6 +310,24 @@ deps_/home/yhd/workspace/myCode/hello/hello.o := \
     $(wildcard include/config/inline/write/unlock/irqrestore.h) \
   include/linux/time64.h \
   include/uapi/linux/time.h \
+  include/uapi/linux/videodev2.h \
+    $(wildcard include/config/video/adv/debug.h) \
+  include/uapi/linux/v4l2-common.h \
+  include/uapi/linux/v4l2-controls.h \
+  include/linux/module.h \
+    $(wildcard include/config/sysfs.h) \
+    $(wildcard include/config/module/sig.h) \
+    $(wildcard include/config/modules/tree/lookup.h) \
+    $(wildcard include/config/kallsyms.h) \
+    $(wildcard include/config/tracepoints.h) \
+    $(wildcard include/config/event/tracing.h) \
+    $(wildcard include/config/livepatch.h) \
+    $(wildcard include/config/module/unload.h) \
+    $(wildcard include/config/constructors.h) \
+    $(wildcard include/config/debug/set/module/ronx.h) \
+  include/linux/stat.h \
+  arch/x86/include/uapi/asm/stat.h \
+  include/uapi/linux/stat.h \
   include/linux/uidgid.h \
     $(wildcard include/config/multiuser.h) \
     $(wildcard include/config/user/ns.h) \
@@ -597,6 +602,20 @@ deps_/home/yhd/workspace/myCode/hello/hello.o := \
     $(wildcard include/config/have/mod/arch/specific.h) \
     $(wildcard include/config/modules/use/elf/rel.h) \
     $(wildcard include/config/modules/use/elf/rela.h) \
+  include/linux/slab.h \
+    $(wildcard include/config/debug/slab.h) \
+    $(wildcard include/config/failslab.h) \
+    $(wildcard include/config/slab.h) \
+    $(wildcard include/config/slub.h) \
+    $(wildcard include/config/slob.h) \
+  include/linux/kmemleak.h \
+    $(wildcard include/config/debug/kmemleak.h) \
+  include/linux/kasan.h \
+  include/media/v4l2-device.h \
+    $(wildcard include/config/media/controller.h) \
+  include/media/media-device.h \
+  include/media/media-devnode.h \
+  include/linux/poll.h \
   include/linux/fs.h \
     $(wildcard include/config/fs/posix/acl.h) \
     $(wildcard include/config/security.h) \
@@ -651,29 +670,189 @@ deps_/home/yhd/workspace/myCode/hello/hello.o := \
   include/uapi/linux/fcntl.h \
   arch/x86/include/uapi/asm/fcntl.h \
   include/uapi/asm-generic/fcntl.h \
-  include/linux/cdev.h \
   arch/x86/include/asm/uaccess.h \
     $(wildcard include/config/x86/intel/usercopy.h) \
     $(wildcard include/config/debug/strict/user/copy/checks.h) \
   arch/x86/include/asm/smap.h \
     $(wildcard include/config/x86/smap.h) \
   arch/x86/include/asm/uaccess_64.h \
+  include/uapi/linux/poll.h \
+  arch/x86/include/uapi/asm/poll.h \
+  include/uapi/asm-generic/poll.h \
+  include/linux/device.h \
+    $(wildcard include/config/debug/devres.h) \
+    $(wildcard include/config/generic/msi/irq/domain.h) \
+    $(wildcard include/config/pinctrl.h) \
+    $(wildcard include/config/generic/msi/irq.h) \
+    $(wildcard include/config/dma/cma.h) \
+    $(wildcard include/config/of.h) \
+    $(wildcard include/config/devtmpfs.h) \
+    $(wildcard include/config/sysfs/deprecated.h) \
+  include/linux/klist.h \
+  include/linux/pinctrl/devinfo.h \
+  include/linux/pinctrl/consumer.h \
+  include/linux/seq_file.h \
+  include/linux/cred.h \
+    $(wildcard include/config/debug/credentials.h) \
+    $(wildcard include/config/keys.h) \
+  include/linux/key.h \
+  include/linux/assoc_array.h \
+    $(wildcard include/config/associative/array.h) \
+  include/linux/selinux.h \
+    $(wildcard include/config/security/selinux.h) \
+  include/linux/pinctrl/pinctrl-state.h \
+  include/linux/ratelimit.h \
+  arch/x86/include/asm/device.h \
+    $(wildcard include/config/x86/dev/dma/ops.h) \
+    $(wildcard include/config/intel/iommu.h) \
+    $(wildcard include/config/amd/iommu.h) \
+  include/linux/pm_wakeup.h \
+  include/linux/cdev.h \
+  include/media/media-entity.h \
+  include/uapi/linux/media.h \
+  include/generated/uapi/linux/version.h \
+  include/media/v4l2-subdev.h \
+    $(wildcard include/config/video/v4l2/subdev/api.h) \
+  include/uapi/linux/v4l2-subdev.h \
+  include/uapi/linux/v4l2-mediabus.h \
+  include/uapi/linux/media-bus-format.h \
+  include/media/v4l2-async.h \
+  include/media/v4l2-common.h \
+    $(wildcard include/config/spi.h) \
+  include/media/v4l2-dev.h \
+  include/linux/spi/spi.h \
+  include/linux/mod_devicetable.h \
+  include/linux/uuid.h \
+  include/uapi/linux/uuid.h \
+  include/linux/kthread.h \
+  include/linux/sched.h \
+    $(wildcard include/config/sched/debug.h) \
+    $(wildcard include/config/lockup/detector.h) \
+    $(wildcard include/config/detect/hung/task.h) \
+    $(wildcard include/config/core/dump/default/elf/headers.h) \
+    $(wildcard include/config/virt/cpu/accounting/native.h) \
+    $(wildcard include/config/sched/autogroup.h) \
+    $(wildcard include/config/bsd/process/acct.h) \
+    $(wildcard include/config/taskstats.h) \
+    $(wildcard include/config/audit.h) \
+    $(wildcard include/config/inotify/user.h) \
+    $(wildcard include/config/fanotify.h) \
+    $(wildcard include/config/posix/mqueue.h) \
+    $(wildcard include/config/perf/events.h) \
+    $(wildcard include/config/bpf/syscall.h) \
+    $(wildcard include/config/sched/info.h) \
+    $(wildcard include/config/task/delay/acct.h) \
+    $(wildcard include/config/schedstats.h) \
+    $(wildcard include/config/sched/mc.h) \
+    $(wildcard include/config/fair/group/sched.h) \
+    $(wildcard include/config/rt/group/sched.h) \
+    $(wildcard include/config/cgroup/sched.h) \
+    $(wildcard include/config/blk/dev/io/trace.h) \
+    $(wildcard include/config/compat/brk.h) \
+    $(wildcard include/config/cgroups.h) \
+    $(wildcard include/config/virt/cpu/accounting/gen.h) \
+    $(wildcard include/config/sysvipc.h) \
+    $(wildcard include/config/auditsyscall.h) \
+    $(wildcard include/config/rt/mutexes.h) \
+    $(wildcard include/config/task/xacct.h) \
+    $(wildcard include/config/cpusets.h) \
+    $(wildcard include/config/futex.h) \
+    $(wildcard include/config/fault/injection.h) \
+    $(wildcard include/config/latencytop.h) \
+    $(wildcard include/config/function/graph/tracer.h) \
+    $(wildcard include/config/bcache.h) \
+    $(wildcard include/config/arch/wants/dynamic/task/struct.h) \
+    $(wildcard include/config/have/unstable/sched/clock.h) \
+    $(wildcard include/config/irq/time/accounting.h) \
+    $(wildcard include/config/stack/growsup.h) \
+    $(wildcard include/config/have/copy/thread/tls.h) \
+  include/uapi/linux/sched.h \
+  include/linux/sched/prio.h \
+  include/linux/plist.h \
+    $(wildcard include/config/debug/pi/list.h) \
+  include/linux/cputime.h \
+  arch/x86/include/generated/asm/cputime.h \
+  include/asm-generic/cputime.h \
+    $(wildcard include/config/virt/cpu/accounting.h) \
+  include/asm-generic/cputime_jiffies.h \
+  include/linux/sem.h \
+  include/uapi/linux/sem.h \
+  include/linux/ipc.h \
+  include/uapi/linux/ipc.h \
+  arch/x86/include/uapi/asm/ipcbuf.h \
+  include/uapi/asm-generic/ipcbuf.h \
+  arch/x86/include/uapi/asm/sembuf.h \
+  include/linux/shm.h \
+  include/uapi/linux/shm.h \
+  arch/x86/include/uapi/asm/shmbuf.h \
+  include/uapi/asm-generic/shmbuf.h \
+  arch/x86/include/asm/shmparam.h \
+  include/linux/signal.h \
+    $(wildcard include/config/old/sigaction.h) \
+  include/uapi/linux/signal.h \
+  arch/x86/include/asm/signal.h \
+  arch/x86/include/uapi/asm/signal.h \
+  include/uapi/asm-generic/signal-defs.h \
+  arch/x86/include/uapi/asm/siginfo.h \
+  include/asm-generic/siginfo.h \
+  include/uapi/asm-generic/siginfo.h \
+  include/linux/proportions.h \
+  include/linux/seccomp.h \
+    $(wildcard include/config/seccomp.h) \
+    $(wildcard include/config/have/arch/seccomp/filter.h) \
+    $(wildcard include/config/seccomp/filter.h) \
+    $(wildcard include/config/checkpoint/restore.h) \
+  include/uapi/linux/seccomp.h \
+  arch/x86/include/asm/seccomp.h \
+  arch/x86/include/asm/unistd.h \
+  arch/x86/include/uapi/asm/unistd.h \
+  arch/x86/include/generated/uapi/asm/unistd_64.h \
+  arch/x86/include/generated/asm/unistd_64_x32.h \
+  arch/x86/include/asm/ia32_unistd.h \
+  arch/x86/include/generated/asm/unistd_32_ia32.h \
+  include/asm-generic/seccomp.h \
+  include/uapi/linux/unistd.h \
+  include/linux/rtmutex.h \
+    $(wildcard include/config/debug/rt/mutexes.h) \
+  include/linux/resource.h \
+  include/uapi/linux/resource.h \
+  arch/x86/include/uapi/asm/resource.h \
+  include/asm-generic/resource.h \
+  include/uapi/asm-generic/resource.h \
+  include/linux/hrtimer.h \
+    $(wildcard include/config/high/res/timers.h) \
+    $(wildcard include/config/time/low/res.h) \
+    $(wildcard include/config/timerfd.h) \
+  include/linux/timerqueue.h \
+  include/linux/task_io_accounting.h \
+    $(wildcard include/config/task/io/accounting.h) \
+  include/linux/latencytop.h \
+  include/uapi/linux/magic.h \
+  include/linux/cgroup-defs.h \
+  include/linux/percpu-refcount.h \
+  include/linux/cgroup_subsys.h \
+    $(wildcard include/config/cgroup/cpuacct.h) \
+    $(wildcard include/config/cgroup/device.h) \
+    $(wildcard include/config/cgroup/freezer.h) \
+    $(wildcard include/config/cgroup/net/classid.h) \
+    $(wildcard include/config/cgroup/perf.h) \
+    $(wildcard include/config/cgroup/net/prio.h) \
+    $(wildcard include/config/cgroup/hugetlb.h) \
+    $(wildcard include/config/cgroup/pids.h) \
+    $(wildcard include/config/cgroup/debug.h) \
+  include/linux/scatterlist.h \
+    $(wildcard include/config/debug/sg.h) \
+    $(wildcard include/config/need/sg/dma/length.h) \
   include/linux/mm.h \
     $(wildcard include/config/ppc.h) \
     $(wildcard include/config/parisc.h) \
     $(wildcard include/config/metag.h) \
-    $(wildcard include/config/stack/growsup.h) \
     $(wildcard include/config/shmem.h) \
     $(wildcard include/config/debug/vm/rb.h) \
     $(wildcard include/config/debug/pagealloc.h) \
     $(wildcard include/config/hugetlbfs.h) \
   include/linux/debug_locks.h \
     $(wildcard include/config/debug/locking/api/selftests.h) \
-  include/linux/resource.h \
-  include/uapi/linux/resource.h \
-  arch/x86/include/uapi/asm/resource.h \
-  include/asm-generic/resource.h \
-  include/uapi/asm-generic/resource.h \
   include/linux/page_ext.h \
     $(wildcard include/config/idle/page/tracking.h) \
     $(wildcard include/config/page/owner.h) \
@@ -699,7 +878,11 @@ deps_/home/yhd/workspace/myCode/hello/hello.o := \
   include/linux/vm_event_item.h \
     $(wildcard include/config/memory/balloon.h) \
     $(wildcard include/config/balloon/compaction.h) \
+  include/media/v4l2-fh.h \
+    $(wildcard include/config/v4l2/mem2mem/dev.h) \
+  include/media/v4l2-mediabus.h \
+  include/media/v4l2-ctrls.h \
 
-/home/yhd/workspace/myCode/hello/hello.o: $(deps_/home/yhd/workspace/myCode/hello/hello.o)
+/home/yhd/workspace/myCode/v4l2Demo/v4l2demo.o: $(deps_/home/yhd/workspace/myCode/v4l2Demo/v4l2demo.o)
 
-$(deps_/home/yhd/workspace/myCode/hello/hello.o):
+$(deps_/home/yhd/workspace/myCode/v4l2Demo/v4l2demo.o):
