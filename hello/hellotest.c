@@ -11,9 +11,10 @@ int main(void)
     int fd;
     int ret;
     char data[20] = "Are you ok, yhd?";
-    fd = open("/dev/helloDevice_245", O_RDWR);
+    fd = open("/dev/helloModule_device", O_RDWR);
     if(fd < 0){
         perror("can't open!");
+        exit(0);
     }
     if((ret = write(fd, &data, sizeof(data))) < 0)
     {

@@ -7,6 +7,7 @@
 #include <asm/uaccess.h>
 #include <linux/init.h>
 #include <linux/mm.h>
+#include <linux/device.h>
 
 #define		HELLO_MAJOR 	231
 #define 	DEVICE_NAME		"HelloModule"
@@ -19,6 +20,7 @@ static dev_t dev;
 struct hello_device{
 	struct cdev m_cdev;
 	unsigned char mem[HELLO_SIZE];
+	struct class *hello_class;
 };
 static struct hello_device hello_dev;
 
@@ -137,6 +139,18 @@ static int __init hello_init(void)
 		printk(KERN_EMERG "cdev failed!\n");
 		return ret;
 	}
+
+	hello_dev.hello_class = class_create(THIS_MODULE,"helloModule_class");
+	if(hello_dev.hello_class == NULL)
+	{
+		printk(KERN_EMERG "class create failed.\n");
+		return 0;
+	}
+
+	if(device_create(hello_dev.hello_class,NULL,dev,NULL,"helloModule_device") == NULL)
+	{
+		printk(KERN_EMERG "device create failed.\n");
+	}
 	return 0;
 }
 
@@ -144,6 +158,8 @@ static void __exit hello_exit(void)
 {
 	/*remove cdev*/
 	cdev_del(&hello_dev.m_cdev);
+	device_destroy(hello_dev.hello_class,dev);
+	class_destroy(hello_dev.hello_class);
 	unregister_chrdev_region(dev,1);
 	printk(KERN_EMERG DEVICE_NAME " removed.\n");
 }
